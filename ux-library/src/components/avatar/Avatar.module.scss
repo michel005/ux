@@ -1,0 +1,39 @@
+.avatar {
+	align-items: center;
+	background-color: var(--avatar-background-color, var(--primary-color));
+	border-radius: var(--avatar-radius);
+	color: var(--avatar-color, var(--primary-color-2, #fff));
+	display: flex;
+	font-size: calc(var(--avatar-size) * 0.4);
+	font-weight: 600;
+	height: var(--avatar-size);
+	justify-content: center;
+	line-height: 1;
+	overflow: hidden;
+	text-transform: uppercase;
+	user-select: none;
+	width: var(--avatar-size);
+
+	&.clickable {
+		cursor: pointer;
+	}
+
+	&[data-variant="square"] {
+		--avatar-radius: var(--border-radius);
+	}
+
+	&[data-variant="circle"] {
+		--avatar-radius: 50%;
+	}
+
+	.image {
+		display: block;
+		height: 100%;
+		object-fit: cover;
+		width: 100%;
+	}
+
+	.abbreviation {
+		letter-spacing: 0.04em;
+	}
+}

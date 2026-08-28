@@ -1,0 +1,91 @@
+@keyframes showTooltipBottom {
+	from {
+		margin-top: -10px;
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes showTooltipTop {
+	from {
+		margin-top: 10px;
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes showTooltipCenterLeft {
+	from {
+		margin-left: 10px;
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes showTooltipCenterRight {
+	from {
+		margin-left: -10px;
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.children {
+	display: contents;
+	z-index: 0;
+}
+
+.tooltip {
+	align-items: center;
+	background-color: #222;
+	border-radius: var(--border-radius);
+	color: #fff;
+	line-height: 1rem;
+	left: 0;
+	max-width: 300px;
+	opacity: 0;
+	padding: 0.55em 0.75em;
+	position: fixed;
+	top: 0;
+	z-index: var(--z-index-tooltip);
+
+	&.show {
+		opacity: 1;
+
+		&[data-position="tl"],
+		&[data-position="tc"],
+		&[data-position="tr"] {
+			animation: showTooltipTop 0.15s linear;
+		}
+
+		&[data-position="cl"],
+		&[data-position="clt"],
+		&[data-position="clb"] {
+			animation: showTooltipCenterLeft 0.15s linear;
+		}
+
+		&[data-position="cr"],
+		&[data-position="crt"],
+		&[data-position="crb"] {
+			animation: showTooltipCenterRight 0.15s linear;
+		}
+
+		&[data-position="bl"],
+		&[data-position="bc"],
+		&[data-position="br"] {
+			animation: showTooltipBottom 0.15s linear;
+		}
+	}
+}

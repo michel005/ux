@@ -1,0 +1,131 @@
+@keyframes showDropdownBottom {
+	from {
+		margin-top: -10px;
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes showDropdownTop {
+	from {
+		margin-top: 10px;
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes showDropdownCenterLeft {
+	from {
+		margin-left: 10px;
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes showDropdownCenterRight {
+	from {
+		margin-left: -10px;
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.background {
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: calc(var(--z-index-dropdown) - 1);
+}
+
+.children {
+	display: flex;
+	flex-direction: column;
+	height: inherit;
+	width: inherit;
+}
+
+.dropdown {
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: var(--border-radius);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	line-height: 1rem;
+	left: 0;
+	min-width: fit-content;
+	max-height: 450px;
+	opacity: 0;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	z-index: var(--z-index-dropdown);
+
+	button {
+		border-radius: 0;
+		font-weight: normal;
+		width: 100%;
+
+		&:first-child {
+			border-radius: var(--border-radius) var(--border-radius) 0 0;
+		}
+		&:last-child {
+			border-radius: 0 0 var(--border-radius) var(--border-radius);
+		}
+
+		> span {
+			color: var(--text-color) !important;
+		}
+	}
+
+	hr {
+		border: none;
+		border-bottom: 1px solid #ccc;
+	}
+
+	[data-component="ButtonGroup"] {
+		width: 100%;
+	}
+
+	&.show {
+		opacity: 1;
+
+		&[data-position="tl"],
+		&[data-position="tc"],
+		&[data-position="tr"] {
+			animation: showDropdownTop 0.15s linear;
+		}
+
+		&[data-position="cl"],
+		&[data-position="clt"],
+		&[data-position="clb"] {
+			animation: showDropdownCenterLeft 0.15s linear;
+		}
+
+		&[data-position="cr"],
+		&[data-position="crt"],
+		&[data-position="crb"] {
+			animation: showDropdownCenterRight 0.15s linear;
+		}
+
+		&[data-position="bl"],
+		&[data-position="bc"],
+		&[data-position="br"] {
+			animation: showDropdownBottom 0.15s linear;
+		}
+	}
+}

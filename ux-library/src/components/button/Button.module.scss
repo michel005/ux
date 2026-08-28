@@ -1,0 +1,115 @@
+.button {
+	align-items: center;
+	background: var(--button-background-color);
+	border: 0;
+	border-radius: var(--border-radius);
+	color: var(--button-color);
+	cursor: pointer;
+	display: inline-flex;
+	font-size: var(--button-font-size, 1rem);
+	font-weight: 600;
+	justify-content: var(--button-justify-content, flex-start);
+	gap: 0.5em;
+	height: 2.75em;
+	padding: var(--button-padding, 0 1em);
+	transition: all 0.25s;
+	width: var(--button-width, auto);
+
+	.icon {
+		font-weight: inherit;
+	}
+
+	.content {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		gap: 0.5em;
+		width: var(--button-content-width, 100%);
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+
+	&:hover:not(:disabled):not(:active),
+	&.active {
+		filter: brightness(0.9);
+	}
+
+	&.size_sm {
+		--button-font-size: 0.875rem;
+	}
+
+	&.size_md {
+		--button-font-size: 1rem;
+	}
+
+	&.size_lg {
+		--button-font-size: 1.125rem;
+	}
+
+	&.size_xl {
+		--button-font-size: 1.25rem;
+	}
+
+	&.align_left {
+		--button-justify-content: flex-start;
+	}
+
+	&.align_center {
+		--button-content-width: auto;
+		--button-justify-content: center;
+	}
+
+	&.align_right {
+		--button-justify-content: flex-end;
+	}
+
+	&:has(.icon):not(:has(.content)) {
+		--button-padding: 0;
+		--button-width: 3em;
+	}
+
+	&.variant_primary {
+		--button-background-color: var(--primary-color);
+		--button-color: #fff;
+	}
+
+	&.variant_secondary {
+		--button-background-color: #e2e8f0;
+		--button-color: #0f172a;
+	}
+
+	&.variant_tertiary {
+		--button-background-color: #fff;
+		--button-color: #0f172a;
+	}
+
+	&.variant_ghost {
+		--button-background-color: transparent;
+		--button-color: #0f172a;
+	}
+
+	&.variant_link {
+		--button-background-color: transparent;
+		--button-color: var(--primary-color);
+		--button-padding: 0;
+		--button-width: fit-content !important;
+	}
+
+	&.variant_danger {
+		--button-background-color: var(--error-color);
+		--button-color: #ffffff;
+	}
+
+	&.variant_success {
+		--button-background-color: #22c55e;
+		--button-color: #ffffff;
+	}
+
+	&.variant_warning {
+		--button-background-color: #facc15;
+		--button-color: #ffffff;
+	}
+}

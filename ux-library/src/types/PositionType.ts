@@ -1,0 +1,13 @@
+export type PositionType =
+	| "tl"
+	| "tc"
+	| "tr"
+	| "cl"
+	| "clt"
+	| "clb"
+	| "cr"
+	| "crt"
+	| "crb"
+	| "bl"
+	| "bc"
+	| "br"

@@ -1,0 +1,67 @@
+.toastGroup {
+	border-radius: 0 0 0 var(--border-radius);
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	padding: 0.75rem;
+	position: absolute;
+	right: 0;
+	top: var(--layout-header-height);
+	transition: all 0.25s;
+	z-index: var(--z-index-toast);
+
+	&:not(&:hover) .clearAllButton {
+		height: 0;
+		margin-top: -0.5rem;
+		max-height: 0;
+		padding: 0;
+		opacity: 0;
+		overflow: hidden;
+	}
+
+	.toastList {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+
+		> div {
+			height: fit-content;
+
+			&:not(&:first-child) {
+				margin-top: -85px;
+			}
+
+			&:not(&:last-child) {
+				height: 86.09px;
+				max-height: 86.09px;
+				min-height: 86.09px;
+				overflow: hidden;
+			}
+		}
+	}
+
+	&:hover {
+		&:has(> div:nth-child(2)) {
+			background-color: #eee9;
+			backdrop-filter: blur(10px);
+		}
+
+		.clearAllButton {
+			display: flex;
+		}
+
+		.toastList {
+			> div {
+				transition: all 0.25s;
+
+				&:not(&:first-child) {
+					height: fit-content;
+					max-height: none;
+					min-height: auto;
+					margin-top: 0;
+					overflow: initial;
+				}
+			}
+		}
+	}
+}

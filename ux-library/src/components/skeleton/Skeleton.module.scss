@@ -1,0 +1,17 @@
+@keyframes skeletonAnimation {
+	to {
+		background-position: 200% 0;
+	}
+}
+
+.skeleton {
+	align-items: center;
+	animation: skeletonAnimation 2s infinite linear;
+	background: linear-gradient(90deg, #f9f9f9, #eee, #f9f9f9);
+	background-size: 300% 100%;
+	background-position: -100% 0;
+	border-radius: var(--border-radius);
+	color: #aaa;
+	display: flex;
+	justify-content: center;
+}

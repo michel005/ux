@@ -1,0 +1,21 @@
+@keyframes rotate {
+	from {
+		transform: rotate(0deg) scale(2);
+	}
+	to {
+		transform: rotate(-360deg) scale(2);
+	}
+}
+
+.backgroundVideo {
+	animation: rotate 15s linear infinite;
+	filter: brightness(0.75) blur(100px);
+	height: 100%;
+	left: 0;
+	margin-bottom: 1rem;
+	object-fit: cover;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}

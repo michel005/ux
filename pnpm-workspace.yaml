@@ -1,0 +1,8 @@
+packages:
+  - 'ux-library'
+  - 'ux-playground'
+
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+allowBuilds:
+  '@parcel/watcher': false

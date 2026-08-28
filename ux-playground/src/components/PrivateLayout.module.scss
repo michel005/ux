@@ -1,0 +1,140 @@
+.privateLayout {
+	background-color: #eee;
+	height: 100%;
+
+	.sidebarAlternateButton {
+		display: none;
+		left: 1rem;
+		position: absolute;
+		top: calc((var(--layout-header-height) / 2) - (3em / 2));
+	}
+
+	.logoImage {
+		height: 36px;
+	}
+
+	> aside {
+		min-width: var(--layout-sidebar-width);
+		transition: all 0.25s;
+		width: var(--layout-sidebar-width);
+
+		.sidebarLogo {
+			height: var(--layout-header-height);
+
+			.logoText {
+				color: var(--primary-color);
+				font-size: 1.5rem;
+			}
+		}
+
+		.sidebarButton {
+			font-weight: normal;
+		}
+	}
+
+	.content {
+		background-color: #f8f8f8;
+		border: 1px solid #ddd;
+		border-radius: var(--border-radius);
+		height: calc(100% - 1rem);
+		margin: 0.5rem;
+		max-height: 100%;
+		position: relative;
+		width: calc(100% - var(--layout-sidebar-width));
+
+		.header {
+			border-radius: var(--border-radius) var(--border-radius) 0 0;
+			height: var(--layout-header-height);
+			min-height: var(--layout-header-height);
+			width: 100%;
+
+			.contentHeader {
+				color: #222;
+			}
+		}
+
+		.main {
+			overflow: auto;
+			position: relative;
+
+			.mainContent {
+				max-width: 1600px;
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	.privateLayout {
+		position: relative;
+
+		.sidebarAlternateButton {
+			display: flex;
+			left: 1rem;
+			position: absolute;
+			top: calc((var(--layout-header-height) / 2) - (3em / 2));
+			z-index: 5000;
+		}
+
+		> aside {
+			background-color: #fff;
+			border-radius: var(--border-radius) 0 0 var(--border-radius);
+			border-right: 1px solid #ddd;
+			height: calc(100% - 1rem);
+			left: calc(var(--layout-sidebar-width) * -1);
+			position: absolute;
+			top: 0.5rem;
+			z-index: 5000;
+		}
+
+		.content {
+			transition: all 0.25s;
+
+			&:before {
+				background-color: #0003;
+				border-radius: var(--border-radius);
+				content: "";
+				height: 100%;
+				left: 0;
+				opacity: 0;
+				pointer-events: none;
+				position: absolute;
+				top: 0;
+				transition: all 0.25s;
+				width: 100%;
+				z-index: 4999;
+			}
+
+			.contentHeaderRow {
+				margin-left: 4rem;
+				opacity: 1;
+				transition: all 0.25s;
+			}
+		}
+
+		&.showSidebar {
+			.sidebarAlternateButton {
+				background-color: #fff;
+				left: calc(var(--layout-sidebar-width) + 1rem);
+			}
+
+			> aside {
+				left: 0.5rem;
+			}
+
+			.content {
+				> header {
+					.contentHeaderRow {
+						opacity: 0;
+					}
+				}
+
+				&:before {
+					opacity: 1;
+					pointer-events: auto;
+				}
+			}
+		}
+	}
+}

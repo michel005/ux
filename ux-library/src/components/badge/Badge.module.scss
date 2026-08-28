@@ -1,0 +1,92 @@
+.badge {
+	align-items: center;
+	background-color: var(--badge-color, var(--primary-color));
+	border-radius: 50%;
+	height: var(--badge-size);
+	display: flex;
+	justify-content: center;
+	max-height: var(--badge-size);
+	max-width: var(--badge-size);
+	min-height: var(--badge-size);
+	min-width: var(--badge-size);
+	pointer-events: none;
+	position: absolute;
+	text-align: center;
+	user-select: none;
+	width: var(--badge-size);
+	z-index: 2;
+
+	.content {
+		display: flex;
+		color: #fff;
+		font-size: calc(var(--badge-size) * 0.65);
+		line-height: 1em;
+	}
+}
+
+.badgeContainer {
+	display: flex;
+	position: relative;
+
+	&.noContent {
+		align-self: center;
+		inset: auto;
+
+		.badge {
+			position: relative;
+		}
+	}
+
+	&[data-type="dot"] {
+		--badge-size: 10px;
+	}
+
+	&[data-type="content"],
+	&[data-type="icon"] {
+		--badge-size: 20px;
+	}
+
+	&:not(.noContent) {
+		&[data-position="tl"] {
+			.badge {
+				inset: calc(var(--badge-size) * -0.3) auto auto
+					calc(var(--badge-size) * -0.3);
+			}
+		}
+
+		&[data-position="tr"] {
+			.badge {
+				inset: calc(var(--badge-size) * -0.3) calc(var(--badge-size) * -0.3)
+					auto auto;
+			}
+		}
+
+		&[data-position="cl"] {
+			.badge {
+				inset: calc(50% - (var(--badge-size) * 0.5)) auto auto
+					calc(var(--badge-size) * -0.3);
+			}
+		}
+
+		&[data-position="cr"] {
+			.badge {
+				inset: calc(50% - (var(--badge-size) * 0.5))
+					calc(var(--badge-size) * -0.3) auto auto;
+			}
+		}
+
+		&[data-position="bl"] {
+			.badge {
+				inset: auto auto calc(var(--badge-size) * -0.3)
+					calc(var(--badge-size) * -0.3);
+			}
+		}
+
+		&[data-position="br"] {
+			.badge {
+				inset: auto calc(var(--badge-size) * -0.3)
+					calc(var(--badge-size) * -0.3) auto;
+			}
+		}
+	}
+}

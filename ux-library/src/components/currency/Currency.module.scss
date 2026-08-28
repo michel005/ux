@@ -1,0 +1,13 @@
+.currency {
+	font-size: var(--currency-font-size, 1em);
+	line-height: 1em;
+	color: #777;
+
+	&.positive {
+		color: green;
+	}
+
+	&.negative {
+		color: red;
+	}
+}

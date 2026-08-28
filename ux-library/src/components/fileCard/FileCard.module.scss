@@ -1,0 +1,63 @@
+.fileCard {
+	align-items: center;
+	background-color: #fff;
+	outline: 1px solid var(--primary-color-2);
+	border-radius: var(--border-radius);
+	display: flex;
+	flex-direction: row;
+	gap: 0.25rem;
+	height: 80px;
+	transition: all 0.25s;
+
+	&:hover {
+		background-color: var(--primary-color-05);
+	}
+
+	.icon {
+		background-color: var(--primary-color-1);
+		height: 80px;
+		pointer-events: none;
+		user-select: none;
+		width: 80px;
+	}
+
+	.fileDetails {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		gap: 0.25rem;
+		padding: 0.5rem;
+	}
+
+	.options {
+		display: flex;
+		flex-direction: row;
+		gap: 0.5rem;
+		padding: 0.75rem;
+	}
+
+	&[data-variant="file"] {
+		flex-direction: column;
+		gap: 0;
+		height: auto;
+		position: relative;
+
+		.icon {
+			height: 150px;
+			width: 100%;
+		}
+
+		.fileDetails {
+			padding: 0.75rem;
+			width: 100%;
+		}
+
+		.options {
+			padding: 0;
+			position: absolute;
+			right: 0.25rem;
+			top: 0.25rem;
+		}
+	}
+}

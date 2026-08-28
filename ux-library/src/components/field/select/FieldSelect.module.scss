@@ -1,0 +1,54 @@
+.fieldSelect {
+	button {
+		span,
+		i {
+			font-weight: normal !important;
+		}
+	}
+}
+
+.clearButton {
+	border-radius: 0 var(--border-radius) var(--border-radius) 0 !important;
+}
+
+.options {
+	button {
+		border-radius: 0 !important;
+		font-weight: normal;
+		width: 100%;
+
+		&:first-child {
+			border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+		}
+		&:last-child {
+			border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
+		}
+	}
+}
+
+.inputButton {
+	height: var(--field-layout-input-height);
+	width: 100%;
+
+	span {
+		font-weight: normal;
+	}
+
+	i {
+		color: #222 !important;
+	}
+
+	&.placeholder {
+		color: var(--field-layout-input-placeholder-color);
+		text-align: left;
+	}
+}
+
+.multipleValues {
+	height: var(--field-layout-input-height);
+	padding: 0 0.5rem;
+
+	button {
+		height: fit-content;
+	}
+}

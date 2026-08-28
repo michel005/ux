@@ -1,0 +1,90 @@
+@use "material-symbols";
+@use "sass:string";
+
+@mixin colorVariation($variablePrefix, $mainColor, $baseColor) {
+	--#{$variablePrefix}: #{$mainColor};
+	--#{$variablePrefix}-05: color-mix(
+		in srgb,
+		var(--#{$variablePrefix}),
+		#{string.unquote("#{$baseColor} 95%")}
+	);
+	@for $i from 1 through 9 {
+		$opacity: 100 - ($i * 10);
+		--#{$variablePrefix}-#{$i}: color-mix(
+			in srgb,
+			var(--#{$variablePrefix}),
+			#{string.unquote("#{$baseColor} #{$opacity}%")}
+		);
+	}
+}
+
+:root {
+	--border-radius: 0.75rem;
+	@include colorVariation("primary-color", #2563eb, #ffffff);
+	@include colorVariation("error-color", #ef4444, #ffffff);
+
+	--layout-header-height: 80px;
+	--layout-sidebar-width: 300px;
+
+	--z-index-drawer: 1000;
+	--z-index-modal: 2000;
+	--z-index-dropdown: 2500;
+	--z-index-tooltip: 3000;
+	--z-index-toast: 3000;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+	line-height: 1em;
+	margin: 0;
+	padding: 0;
+}
+
+hr {
+	border: none;
+	border-bottom: 2px solid #eee;
+}
+
+h1,
+h2 {
+	color: var(--primary-color);
+}
+
+a {
+	color: var(--primary-color);
+	cursor: pointer;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+body,
+html {
+	font-size: 16px;
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+#tooltip {
+	z-index: 4000;
+}
+
+#modal {
+	z-index: 3000;
+}
+
+#dropdown {
+	z-index: 2000;
+}
+
+#drawer {
+	z-index: 1000;
+}

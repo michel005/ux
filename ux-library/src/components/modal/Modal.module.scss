@@ -1,0 +1,119 @@
+@keyframes backgroundFadeIn {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes backgroundFadeOut {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeOut {
+	to {
+		opacity: 0;
+	}
+}
+
+.modalBackground {
+	--modal-size: 400px;
+
+	display: flex;
+	flex-direction: row;
+	animation: backgroundFadeIn 0.25s ease-in-out;
+	background-color: #0003;
+	backdrop-filter: blur(4px);
+	justify-content: center;
+	overflow: auto;
+	padding: 2rem;
+	position: fixed;
+	height: 100%;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+
+	&[data-size="sm"] {
+		--modal-size: 400px;
+	}
+
+	&[data-size="md"] {
+		--modal-size: 600px;
+	}
+
+	&[data-size="lg"] {
+		--modal-size: 800px;
+	}
+
+	&[data-size="xl"] {
+		--modal-size: 1000px;
+	}
+
+	.modal {
+		animation: fadeIn 0.25s ease-in-out;
+		background-color: #fff;
+		border-radius: 0.5rem;
+		height: fit-content;
+		margin: auto 0;
+		width: var(--modal-size);
+
+		> header {
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			gap: 1rem;
+			padding: 1.5rem 1.5rem 1rem;
+
+			.icon {
+				align-items: center;
+				border: 1px solid #ddd;
+				border-radius: 50%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				height: 3rem;
+				width: 3rem;
+			}
+
+			h2 {
+				color: #333;
+				flex-grow: 1;
+			}
+
+			p {
+				color: #aaa;
+			}
+		}
+
+		> section {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+			padding: 1rem 1.5rem 1.5rem;
+		}
+
+		> footer {
+			align-items: center;
+			border-top: 1px solid #ddd;
+			display: flex;
+			gap: 1rem;
+			justify-content: flex-end;
+			padding: 1.5rem;
+		}
+	}
+
+	&.close {
+		animation: backgroundFadeOut 0.25s ease-in-out;
+
+		.modal {
+			animation: fadeOut 0.25s ease-in-out;
+		}
+	}
+}

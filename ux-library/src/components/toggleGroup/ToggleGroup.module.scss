@@ -1,0 +1,90 @@
+.toggleGroup {
+	background-color: #eee;
+	border-radius: var(--border-radius);
+	font-size: var(--toggle-group-font-size, 1rem);
+	padding: 0.35rem;
+	position: relative;
+
+	&.size_sm {
+		--toggle-group-font-size: 0.875rem;
+	}
+
+	&.size_md {
+		--button-font-size: 1rem;
+	}
+
+	&.size_lg {
+		--button-font-size: 1.125rem;
+	}
+
+	&.size_xl {
+		--button-font-size: 1.25rem;
+	}
+
+	.selectionIndicator {
+		background-color: #fff;
+		border-radius: var(--border-radius);
+		box-shadow: 2px 4px 4px #ddd;
+		left: 0;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		transition:
+			height 0.25s ease,
+			opacity 0.15s ease,
+			transform 0.25s ease,
+			width 0.25s ease;
+		z-index: 0;
+	}
+
+	.option {
+		align-items: center;
+		background-color: transparent;
+		border: none;
+		border-radius: var(--border-radius);
+		cursor: pointer;
+		display: flex;
+		flex-direction: row;
+		flex-grow: 1;
+		font-size: 1em;
+		font-weight: bold;
+		gap: 0.5em;
+		height: 2.5em;
+		justify-content: center;
+		min-width: fit-content;
+		padding: 0 1rem;
+		transition: all 0.25s;
+		white-space: nowrap;
+		width: 10%;
+		z-index: 1;
+
+		&.size_sm {
+			font-size: 0.875rem;
+		}
+
+		&.size_md {
+			font-size: 1rem;
+		}
+
+		&.size_lg {
+			font-size: 1.125rem;
+		}
+
+		&.size_xl {
+			font-size: 1.25rem;
+		}
+
+		&:not(.selected) {
+			color: #333;
+		}
+
+		&:hover {
+			background-color: #fff9;
+		}
+
+		&.selected {
+			background-color: transparent;
+			box-shadow: none;
+		}
+	}
+}

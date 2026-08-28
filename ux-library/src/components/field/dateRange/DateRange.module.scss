@@ -1,0 +1,14 @@
+.dateRangeContainer {
+	> input {
+		align-self: center !important;
+		height: var(--field-layout-input-height) !important;
+
+		&:first-child {
+			border-radius: var(--border-radius) 0 0 var(--border-radius) !important;
+		}
+
+		&:last-child {
+			border-radius: 0 var(--border-radius) var(--border-radius) 0 !important;
+		}
+	}
+}
