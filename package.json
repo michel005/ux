@@ -1,6 +1,7 @@
 {
 	"name": "ux-workspace",
 	"private": true,
+	"packageManager": "pnpm@11.24.0",
 	"scripts": {
 		"dev": "concurrently \"pnpm --filter ux-library run dev\" \"pnpm --filter ux-playground run dev\""
 	},
