@@ -1,7 +1,7 @@
 {
 	"name": "@michel005/ux-library",
 	"private": false,
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "React UX component library",
 	"license": "MIT",
 	"author": "michel005",
