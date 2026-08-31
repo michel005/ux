@@ -20,7 +20,11 @@
 
 :root {
 	--border-radius: 0.75rem;
-	@include colorVariation("primary-color", #2563eb, #ffffff);
+	@include colorVariation(
+		"primary-color",
+		var(--external-primary-color, #2563eb),
+		#ffffff
+	);
 	@include colorVariation("error-color", #ef4444, #ffffff);
 
 	--layout-header-height: 80px;
