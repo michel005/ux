@@ -33,7 +33,7 @@
 	position: fixed;
 	height: 100%;
 	left: 0;
-	top: var(--layout-header-height);
+	top: 0;
 	width: 100%;
 	z-index: calc(var(--z-index-drawer) - 1);
 
@@ -59,7 +59,7 @@
 		border-left: 1px solid #ddd;
 		display: flex;
 		flex-direction: column;
-		height: calc(100% - var(--layout-header-height));
+		height: 100%;
 		max-width: 100%;
 		position: fixed;
 		right: var(--drawer-space);

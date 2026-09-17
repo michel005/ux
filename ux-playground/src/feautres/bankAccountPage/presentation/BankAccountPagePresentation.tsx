@@ -10,6 +10,7 @@ import { FormProvider } from "react-hook-form"
 import {
 	Button,
 	Currency,
+	DrawerStore,
 	Flex,
 	ModalStore,
 	SimpleDropdownOptions,
@@ -38,7 +39,7 @@ export function BankAccountPagePresentation() {
 						<Button.Primary
 							leftIcon="add"
 							onClick={() => {
-								ModalStore.getState().open("bankAccount", {
+								DrawerStore.getState().open("bankAccount", {
 									name: "Nova Conta",
 								})
 							}}

@@ -12,7 +12,11 @@ function App() {
 	return (
 		<>
 			{userStore.isLoggedIn ? <PrivateLayout /> : <PublicLayout />}
-			<DrawerManager drawers={{}} />
+			<DrawerManager
+				drawers={{
+					bankAccount: BankAccountPresentationForm,
+				}}
+			/>
 			<ModalManager
 				modals={{
 					bankAccount: BankAccountPresentationForm,

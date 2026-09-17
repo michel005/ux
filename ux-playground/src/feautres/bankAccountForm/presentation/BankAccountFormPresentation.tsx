@@ -2,6 +2,7 @@ import { FormProvider, useForm } from "react-hook-form"
 import {
 	Button,
 	ColorSquare,
+	Drawer,
 	Field,
 	Flex,
 	Grid,
@@ -26,11 +27,11 @@ export function BankAccountPresentationForm(
 	})
 
 	return (
-		<Modal
+		<Drawer
 			id={props.id}
-			icon="description"
+			// icon="description"
 			header="Formulário de Conta Bancária"
-			description="Preencha os dados da sua conta bancária"
+			// description="Preencha os dados da sua conta bancária"
 			onClose={props.onClose}
 			size="lg"
 			footer={
@@ -99,6 +100,6 @@ export function BankAccountPresentationForm(
 					/>
 				)}
 			</Grid>
-		</Modal>
+		</Drawer>
 	)
 }
